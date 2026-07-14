@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primera Comunión — Karol y Agustín</title>
+<style>
+:root{
+  --azul:#153f7a;
+  --dorado:#c99019;
+  --crema:#fffaf1;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Georgia, "Times New Roman", serif;
+  color:var(--azul);
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,.95), rgba(245,238,222,.97)),
+    #f5eedf;
+  overflow-x:hidden;
+}
+.mariposa{
+  position:fixed;
+  left:-70px;
+  top:20vh;
+  width:34px;
+  height:24px;
+  z-index:5;
+  pointer-events:none;
+  opacity:.82;
+  animation:volar linear infinite;
+  filter:drop-shadow(0 3px 3px rgba(0,0,0,.15));
+}
+.mariposa::before,.mariposa::after{
+  content:"";
+  position:absolute;
+  width:17px;height:23px;
+  border-radius:70% 30% 70% 30%;
+  background:linear-gradient(135deg,#8bb7dc,#f6d59b);
+  transform-origin:100% 50%;
+  animation:aleteo .38s ease-in-out infinite alternate;
+}
+.mariposa::before{left:0; transform:rotate(28deg)}
+.mariposa::after{
+  right:0; transform:scaleX(-1) rotate(28deg);
+  transform-origin:0 50%;
+}
+@keyframes aleteo{
+  from{scale:.55 1}
+  to{scale:1 1}
+}
+@keyframes volar{
+  0%{transform:translate(-10vw,10vh) rotate(0deg)}
+  25%{transform:translate(28vw,-4vh) rotate(7deg)}
+  50%{transform:translate(58vw,12vh) rotate(-5deg)}
+  75%{transform:translate(82vw,-3vh) rotate(8deg)}
+  100%{transform:translate(115vw,8vh) rotate(0deg)}
+}
+.contenedor{
+  width:min(100%,760px);
+  margin:0 auto;
+  padding:18px 14px 48px;
+  position:relative;
+  z-index:2;
+}
+.tarjeta{
+  background:rgba(255,255,255,.88);
+  border:1px solid rgba(201,144,25,.38);
+  box-shadow:0 18px 55px rgba(62,42,12,.18);
+  border-radius:26px;
+  overflow:hidden;
+  backdrop-filter:blur(6px);
+}
+.portada{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.panel{
+  padding:26px 22px 32px;
+  text-align:center;
+}
+.panel h1{
+  margin:0 0 8px;
+  font-size:clamp(1.6rem,5vw,2.35rem);
+  color:var(--dorado);
+}
+.panel p{
+  margin:8px auto 20px;
+  max-width:560px;
+  line-height:1.55;
+  font-size:1.02rem;
+}
+.acciones{
+  display:grid;
+  gap:13px;
+  max-width:500px;
+  margin:0 auto;
+}
+.btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  min-height:54px;
+  padding:14px 18px;
+  border:none;
+  border-radius:999px;
+  font-size:1rem;
+  font-weight:700;
+  text-decoration:none;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.btn:hover{transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,.13)}
+.btn-whatsapp{background:#25D366;color:white}
+.btn-ubicacion{background:var(--azul);color:white}
+.btn-musica{background:#fff3d7;color:#73500d;border:1px solid #e7c474}
+.nota{
+  margin-top:17px;
+  font-size:.93rem;
+  color:#5f5f5f;
+}
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  place-items:center;
+  padding:20px;
+  background:rgba(15,25,45,.58);
+  z-index:20;
+}
+.modal.activo{display:grid}
+.caja{
+  width:min(100%,430px);
+  background:white;
+  border-radius:22px;
+  padding:28px 24px;
+  text-align:center;
+  box-shadow:0 22px 70px rgba(0,0,0,.28);
+}
+.caja h2{margin-top:0;color:var(--azul)}
+.caja p{line-height:1.5}
+.cerrar{
+  margin-top:10px;
+  background:#eee;
+  color:#333;
+}
+@media (max-width:540px){
+  .contenedor{padding:0 0 30px}
+  .tarjeta{border-radius:0}
+  .panel{padding:23px 16px 28px}
+}
+</style>
+</head>
+<body>
+
+<div class="mariposa" style="top:12vh;animation-duration:16s;animation-delay:-3s"></div>
+<div class="mariposa" style="top:34vh;animation-duration:20s;animation-delay:-11s;scale:.8"></div>
+<div class="mariposa" style="top:58vh;animation-duration:18s;animation-delay:-7s;scale:.65"></div>
+<div class="mariposa" style="top:76vh;animation-duration:23s;animation-delay:-15s;scale:.9"></div>
+
+<main class="contenedor">
+  <section class="tarjeta">
+    <img src="invitacion.png" class="portada" alt="Invitación a la Primera Comunión de Karol y Agustín">
+
+    <div class="panel">
+      <h1>¡Nos encantará contar con tu presencia!</h1>
+      <p>Confirma tu asistencia por WhatsApp. La ubicación se compartirá un día antes de la celebración.</p>
+
+      <div class="acciones">
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/525612987440?text=Confirmo%20mi%20asistencia%20a%20la%20Primera%20Comuni%C3%B3n%20de%20Karol%20y%20Agust%C3%ADn."
+           target="_blank" rel="noopener">
+          ✓ Confirmar asistencia
+        </a>
+
+        <button class="btn btn-ubicacion" id="btnUbicacion">
+          📍 Consultar ubicación
+        </button>
+
+        <button class="btn btn-musica" id="btnMusica">
+          ♫ Reproducir música
+        </button>
+      </div>
+
+      <div class="nota">12 de septiembre · 3:00 de la tarde</div>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="modalUbicacion" role="dialog" aria-modal="true">
+  <div class="caja">
+    <h2>Ubicación del evento</h2>
+    <p>La ubicación se compartirá por WhatsApp un día antes de la Primera Comunión.</p>
+    <a class="btn btn-whatsapp"
+       href="https://wa.me/525612987440?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20la%20Primera%20Comuni%C3%B3n%20de%20Karol%20y%20Agust%C3%ADn.%20Quedo%20pendiente%20de%20la%20ubicaci%C3%B3n."
+       target="_blank" rel="noopener">
+      Confirmar y solicitar ubicación
+    </a>
+    <button class="btn cerrar" id="cerrarModal">Cerrar</button>
+  </div>
+</div>
+
+<audio id="audio" src="musica_fondo.wav" loop preload="auto"></audio>
+
+<script>
+const audio = document.getElementById('audio');
+const btnMusica = document.getElementById('btnMusica');
+const modal = document.getElementById('modalUbicacion');
+
+btnMusica.addEventListener('click', async () => {
+  try{
+    if(audio.paused){
+      await audio.play();
+      btnMusica.textContent = '❚❚ Pausar música';
+    }else{
+      audio.pause();
+      btnMusica.textContent = '♫ Reproducir música';
+    }
+  }catch(e){
+    alert('Toca nuevamente el botón para iniciar la música.');
+  }
+});
+
+document.getElementById('btnUbicacion').addEventListener('click', () => {
+  modal.classList.add('activo');
+});
+document.getElementById('cerrarModal').addEventListener('click', () => {
+  modal.classList.remove('activo');
+});
+modal.addEventListener('click', (e) => {
+  if(e.target === modal) modal.classList.remove('activo');
+});
+</script>
+</body>
+</html>

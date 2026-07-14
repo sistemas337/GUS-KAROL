@@ -1,0 +1,7 @@
+INVITACIÓN WEB — KAROL Y AGUSTÍN
+
+1. Abra index.html para probarla.
+2. Para publicarla, suba toda la carpeta a un servicio de alojamiento web.
+3. El botón de confirmación abre WhatsApp al 56 1298 7440.
+4. La ubicación aparece como pendiente y se indica que será compartida un día antes.
+5. La música comienza cuando el invitado toca el botón, debido a las restricciones de reproducción automática de los navegadores.
